@@ -24,10 +24,14 @@ public class GamerOver : MonoBehaviour {
         MoveTexture.velocidadeCeuUP = 0;
         MoveTexture.velocidadeSoloUP = 0;
         SpawControler.intervaloSpawUP = 0;
+        SpawControler.bg1 = true;
+        SpawControler.bg2 = false;
+        SpawControler.bg3 = false;
         MoverObjeto.velocidadeUP = 0;
         GerenciadorDesafio.score = 0;
         Relogio.liga = false;
         MoverObjeto.multiplicador = 0;
+        
 
 
     }

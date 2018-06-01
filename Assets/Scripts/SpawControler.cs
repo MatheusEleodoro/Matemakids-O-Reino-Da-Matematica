@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SpawControler : MonoBehaviour {
 
-    public GameObject Obstaculo_prefab,Obstaculo_prefab2; //Objeto a ser Spawnado
+    public GameObject Obstaculo_prefab,Obstaculo_prefab2, Obstaculo_prefab3, Obstaculo_prefab4, Obstaculo_prefab5, Obstaculo_prefab6; //Objeto a ser Spawnado
     
     public float intervaloSpaw, time; //Controle do Intervalo de Spaw
     public static float intervaloSpawUP = 0;
+    public static bool bg1 =true,bg2 =false,bg3 = false;
     private int posicao; //Para controle se obstaculo vem por cima ou por baixo aleatoriamente
    // private float py = -1.543f;
     public float posA, posB;
@@ -27,19 +28,48 @@ public class SpawControler : MonoBehaviour {
             posicao = Random.Range(1, 100);
 
 
-
-            if (posicao %2 == 0)
+            if (bg1)
             {
-                GameObject PrefabTemp = Instantiate(Obstaculo_prefab) as GameObject;
-                PrefabTemp.transform.position = new Vector3(transform.position.x, posA, transform.position.z);
+
+
+                if (posicao % 2 == 0)
+                {
+                    GameObject PrefabTemp = Instantiate(Obstaculo_prefab) as GameObject;
+                    PrefabTemp.transform.position = new Vector3(transform.position.x, posA, transform.position.z);
+                }
+                else
+                {
+                    GameObject PrefabTemp = Instantiate(Obstaculo_prefab2) as GameObject;
+                    PrefabTemp.transform.position = new Vector3(transform.position.x, posB, transform.position.z);
+                }
             }
-            else
+            if (bg2)
             {
-                GameObject PrefabTemp = Instantiate(Obstaculo_prefab2) as GameObject;
-                PrefabTemp.transform.position = new Vector3(transform.position.x, posB, transform.position.z);
+                if (posicao % 2 == 0)
+                {
+                    GameObject PrefabTemp = Instantiate(Obstaculo_prefab3) as GameObject;
+                    PrefabTemp.transform.position = new Vector3(transform.position.x, posA, transform.position.z);
+                }
+                else
+                {
+                    GameObject PrefabTemp = Instantiate(Obstaculo_prefab4) as GameObject;
+                    PrefabTemp.transform.position = new Vector3(transform.position.x, posB, transform.position.z);
+                }
+            }
+            if (bg3)
+            {
+                if (posicao % 2 == 0)
+                {
+                    GameObject PrefabTemp = Instantiate(Obstaculo_prefab5) as GameObject;
+                    PrefabTemp.transform.position = new Vector3(transform.position.x, posA, transform.position.z);
+                }
+                else
+                {
+                    GameObject PrefabTemp = Instantiate(Obstaculo_prefab6) as GameObject;
+                    PrefabTemp.transform.position = new Vector3(transform.position.x, posB, transform.position.z);
+                }
             }
 
-            
         }
 	}
 }

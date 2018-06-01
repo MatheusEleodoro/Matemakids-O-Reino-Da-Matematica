@@ -11,7 +11,7 @@ public class MoverObjeto : MonoBehaviour {
     public static bool DestroyInst = false;
     public static bool bateu;
     public static int multiplicador = 0;
-    public static int contador = 0;
+    public static int contador = 0, contador2 = 0;
 	void Start () {
         Player = GameObject.Find("Player") as GameObject;
         bateu = false;
@@ -27,12 +27,12 @@ public class MoverObjeto : MonoBehaviour {
         if (DestroyInst)
         {
             Destroy(transform.gameObject);
+            
         }
         
         else if (px <= -5)
         {
-            Destroy(transform.gameObject);
-            
+            Destroy(transform.gameObject);            
         }
 
         if(px < Player.transform.position.x && !scored)
@@ -44,11 +44,17 @@ public class MoverObjeto : MonoBehaviour {
             GerenciadorDesafio.score = (GerenciadorDesafio.score +1)+multiplicador;
             PlayerControlador.soundscore = true;
             contador++;
-                if(contador >= 15)
+            contador2++;
+                if(contador >= 65)
                 {
                     Dificuldade.ativa6 = true;
                     contador = 0;
-                }
+                } //Contador de pontos para controle da dificuldade 
+                if(contador2 >= 65)
+                {
+                    Transition.transition = true;
+                    contador2 = 0;
+                } //Contador de pontos para controle de Transição de Cenarios
             }
             if (bateu)
             {

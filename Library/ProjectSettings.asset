@@ -117,7 +117,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.5.1
+  bundleVersion: 1.6
   preloadedAssets:
   - {fileID: 102900000, guid: b0d06b03e3d24a648b791daec28a08b2, type: 3}
   - {fileID: 102900000, guid: c60cd54cf7911ec4ba37a416f6b93966, type: 3}
@@ -157,7 +157,7 @@ PlayerSettings:
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
-  AndroidTargetSdkVersion: 27
+  AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 2
   aotOptions: 
   stripEngineCode: 1

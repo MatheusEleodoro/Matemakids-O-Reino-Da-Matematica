@@ -86,7 +86,7 @@ public class DesafioControl : MonoBehaviour {
 
             }
 
-        }else if (!Active)
+        }else if (!Active && !Transition.disableCol)
         {
             BotOpc1.SetActive(false);
             BotOpc2.SetActive(false);
